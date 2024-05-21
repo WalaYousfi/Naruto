@@ -1,0 +1,19 @@
+<p>rx-js-functions works!</p>
+<!-- async converts the data into plain array of users -->
+<!-- <div *ngFor="let names of username$ | async">
+  {{ names }}
+</div> -->
+
+<p></p>
+<!-- <div *ngFor="let user of users$ | async">
+  {{ user.name }}
+</div> -->
+
+<!-- data shows only if all users are active -->
+<!-- <div *ngFor="let name of filteredUsers$ | async">
+  {{ name }}
+</div> -->
+
+<div *ngIf="user$ | async as user">
+  {{ user.name }}
+</div>

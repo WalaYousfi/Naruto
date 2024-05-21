@@ -1,0 +1,19 @@
+.listing{
+display: grid;
+grid-template-rows: 150px;
+grid-template-rows:200px 70px 30px ;
+justify-content: center;
+border-radius: 5px;
+border: solid 1px #cecdcd;
+text-align: center;
+
+}
+.listing-photo{
+    height: 200px;
+    width: 100%;
+}
+.listing-heading{
+    justify-self:center;
+    
+    
+}

@@ -1,0 +1,27 @@
+<div *ngFor="let clan of clans$ | async">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ clan.name }}
+        </mat-panel-title>
+        <mat-panel-description> summary </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>this is about {{ clan.name }} clan from anime Naruto</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> More details </mat-panel-title>
+        <mat-panel-description>
+          {{ panelOpenState ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="content">
+        <p>ID: {{ clan.id }}</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

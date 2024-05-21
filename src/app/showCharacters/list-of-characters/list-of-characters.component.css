@@ -1,0 +1,19 @@
+mat-accordion {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+mat-expansion-panel {
+  width: 500px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+}
