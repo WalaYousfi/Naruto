@@ -1,0 +1,32 @@
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+  .gapped {
+    row-gap: 25px;
+  }
+  
+  span {
+    font-style: italic;
+    font-weight: bold;
+    color: hsla(240, 96%, 30%, 0.735);
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .characters-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Optional: allows wrapping to next line if too many IDs */
+    gap: 10px; /* Space between IDs */
+  }
+  
+  .idOrder {
+    display: inline-block; /* Display each ID as an inline-block element */
+  }
+  

@@ -3,6 +3,7 @@ mat-accordion {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   padding-bottom: 30px;
 }
 mat-expansion-panel {

@@ -1,4 +1,4 @@
-<div *ngFor="let clan of clans$ | async">
+<div *ngFor="let clan of clans$ | async; let i = index">
   <mat-accordion>
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
@@ -21,6 +21,7 @@
       </mat-expansion-panel-header>
       <div class="content">
         <p>ID: {{ clan.id }}</p>
+        <button mat-button [routerLink]="['/clanDetail', i]">more</button>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

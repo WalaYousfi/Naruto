@@ -1,17 +1,55 @@
-<mat-drawer-container class="example-container" [hasBackdrop]="true">
-  <mat-drawer #drawer [mode]="'side'">
-    <mat-chip-listbox class="mat-mdc-chip-set-stacked">
-      @for (chip of collections; track chip) {
-      <mat-chip-option selected routerLink="{{ chip.rout }}">{{
-        chip.name
-      }}</mat-chip-option>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    #drawer
+    class="drawer"
+    fixedInViewport
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
+    <mat-nav-list>
+      <img src="assets/itachi.png" alt="" class="itachi" />
+      <div *ngFor="let chip of collections">
+        <a
+          mat-list-item
+          routerLink="{{ chip.rout }}"
+          (click)="drawer.close()"
+          >{{ chip.name }}</a
+        >
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
 
-      }
-    </mat-chip-listbox>
-  </mat-drawer>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        (click)="drawer.toggle()"
+        type="button"
+        mat-icon-button
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span routerLink="/"
+        ><img class="logo" [src]="imageSRC" (click)="changeImage()"
+      /></span>
 
-  <mat-drawer-content>
-    <button mat-raised-button (click)="drawer.toggle()">Choose Collection</button>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+      <span class="fill-space"></span>
+      <div *ngIf="!(isHandset$ | async)" class="collec-list">
+        <div *ngFor="let chip of collections" class="title-img">
+          <img [src]="chip.image" class="toolbar-img" />
+          <a mat-button routerLink="{{ chip.rout }}" (click)="drawer.close()"
+            >{{ chip.name }}
+          </a>
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <div style="flex-grow: 1">
+      <ng-content></ng-content>
+    </div>
+
+    <footer>
+      <p>© 2024 Naruto Info App. All rights reserved.</p>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

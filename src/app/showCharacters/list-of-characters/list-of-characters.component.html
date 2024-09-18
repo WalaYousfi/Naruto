@@ -1,4 +1,4 @@
-<div *ngFor="let character of characters$ | async">
+<div *ngFor="let character of characters$ | async; let i=index">
   <mat-accordion>
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
@@ -23,7 +23,9 @@
         <p>ID: {{ character.id }}</p>
         <p>sex: {{ character.personal.sex }}</p>
         <img [src]="character.images[0]" />
+        <button mat-button [routerLink]="['/characterDetail', i]">more</button>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+

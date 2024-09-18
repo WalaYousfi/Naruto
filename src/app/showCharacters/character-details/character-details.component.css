@@ -1,0 +1,18 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+  span {
+    font-style: italic;
+    font-weight: bold;
+    color: hsla(240, 96%, 30%, 0.735);
+  }
+  img {
+    width: 100%;
+  }
+mat-card{
+  width: 400px;
+}

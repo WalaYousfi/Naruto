@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Character } from '../character';
+import { CharactersService } from '../characters.service';
 
 @Component({
   selector: 'app-list-of-characters',
@@ -11,15 +12,7 @@ import { Character } from '../character';
 export class ListOfCharactersComponent {
   characters$: Observable<Character[]>;
   panelOpenState = false;
-  constructor(private httpClient: HttpClient) {
-    this.characters$ = this.getCharacter();
-  }
-
-  getCharacter(): Observable<any[]> {
-    return this.httpClient
-      .get<{ characters: Character[] }>(
-        'https://dattebayo-api.onrender.com/characters'
-      )
-      .pipe(map((Response) => Response.characters));
+  constructor(private charService: CharactersService) {
+    this.characters$ = charService.getCharacters();
   }
 }

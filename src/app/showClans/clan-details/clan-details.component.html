@@ -1,0 +1,29 @@
+<ng-template #loading>
+    <p>loading...</p>
+</ng-template>
+
+<div *ngIf="clan$ |async as clan , else loading" class="content">
+    <mat-card class="gapped">
+      <mat-card-header>
+        <mat-card-title>About {{ clan.name }}</mat-card-title>
+        <mat-card-subtitle>Naruto clanges</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p><span>Character ID:</span> {{ clan.id }}</p>
+        <p><span>Character Name: </span>{{ clan.name }}</p>
+        <p>
+          <span>Number of Characters of this village: </span>
+          {{ clan.characters.length }}
+        </p>
+        <p><span>Characters IDs: </span></p>
+        <div class="characters-container">
+          <div *ngFor="let id of clan.characters" class="idOrder">
+            {{ id }}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <ng-template #loading>Loading...</ng-template>
+  

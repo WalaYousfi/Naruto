@@ -1,0 +1,25 @@
+<div *ngIf="village | async as villa; else loading" class="content">
+    <mat-card class="gapped">
+      <mat-card-header>
+        <mat-card-title>About {{ villa.name }}</mat-card-title>
+        <mat-card-subtitle>Naruto Villages</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p><span>Character ID:</span> {{ villa.id }}</p>
+        <p><span>Character Name: </span>{{ villa.name }}</p>
+        <p>
+          <span>Number of Characters of this village: </span>
+          {{ villa.characters.length }}
+        </p>
+        <p><span>Characters IDs: </span></p>
+        <div class="characters-container">
+          <div *ngFor="let id of villa.characters" class="idOrder">
+            {{ id }}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <ng-template #loading>Loading...</ng-template>
+  
