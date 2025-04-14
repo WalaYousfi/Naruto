@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'tial';
-
+  title = 'naruto_verse';
 
   users$: Observable<any>;
 
