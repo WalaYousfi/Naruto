@@ -4,7 +4,8 @@
     class="drawer"
     fixedInViewport
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="false"
+    [opened]="navBarState && (isHandset$ | async)"
+    (openedChange)="onSideNavOpenChange($event)"
   >
     <mat-nav-list>
       <img src="assets/itachi.png" alt="" class="itachi" />

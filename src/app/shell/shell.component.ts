@@ -13,6 +13,7 @@ export interface collection {
 })
 export class ShellComponent {
   imageSRC = 'assets/sharingan.png';
+  navBarState = false;
   collections = [
     {
       name: 'characters',
@@ -37,5 +38,8 @@ export class ShellComponent {
     } else {
       this.imageSRC = 'assets/sharingan.png';
     }
+  }
+  onSideNavOpenChange(navBarState: boolean){
+    this.navBarState = navBarState;
   }
 }
