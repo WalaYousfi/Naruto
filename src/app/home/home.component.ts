@@ -3,15 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-myself',
-  templateUrl: './myself.component.html',
-  styleUrls: ['./myself.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
-export class MyselfComponent implements OnInit {
+export class HomeComponent implements OnInit {
   users$: Observable<any>;
 
   constructor(private httpClient: HttpClient) {
-   this.users$ = this.getUsersFromBackend();
+    this.users$ = this.getUsersFromBackend();
   }
 
   getUsersFromBackend(): Observable<any> {

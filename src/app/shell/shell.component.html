@@ -11,7 +11,7 @@
       <div *ngFor="let chip of collections">
         <a
           mat-list-item
-          routerLink="{{ chip.rout }}"
+          routerLink="{{ chip.route }}"
           (click)="drawer.close()"
           >{{ chip.name }}</a
         >
@@ -37,7 +37,7 @@
       <div *ngIf="!(isHandset$ | async)" class="collec-list">
         <div *ngFor="let chip of collections" class="title-img">
           <img [src]="chip.image" class="toolbar-img" />
-          <a mat-button routerLink="{{ chip.rout }}" (click)="drawer.close()"
+          <a mat-button routerLink="{{ chip.route }}" (click)="drawer.close()"
             >{{ chip.name }}
           </a>
         </div>

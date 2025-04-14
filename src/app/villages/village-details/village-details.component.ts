@@ -13,12 +13,12 @@ export class VillageDetailsComponent {
   village!: Observable<Village | null>;
 
   constructor(
-    private villaService: VillagesService,
+    private villageService: VillagesService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     const index = Number(this.route.snapshot.paramMap.get('index'));
-    this.village = this.villaService.getVillageByIndex(index);
+    this.village = this.villageService.getVillageByIndex(index);
   }
 }

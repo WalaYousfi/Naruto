@@ -4,7 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export interface collection {
   name: string;
-  rout: string;
+  route: string;
 }
 @Component({
   selector: 'app-shell',
@@ -16,11 +16,11 @@ export class ShellComponent {
   collections = [
     {
       name: 'characters',
-      rout: '/characters',
+      route: '/characters',
       image: 'assets/main-characters.png',
     },
-    { name: 'clans', rout: '/clans', image: 'assets/akatsuki.png' },
-    { name: 'villages', rout: '/villages', image: 'assets/leaf-village.png' },
+    { name: 'clans', route: '/clans', image: 'assets/akatsuki.png' },
+    { name: 'villages', route: '/villages', image: 'assets/leaf-village.png' },
   ];
 
   isHandset$: Observable<boolean> = this.breakPointObserver
@@ -32,6 +32,10 @@ export class ShellComponent {
   constructor(private breakPointObserver: BreakpointObserver) {}
 
   changeImage() {
-    this.imageSRC = 'assets/mangekyu.png';
+    if (this.imageSRC === 'assets/sharingan.png') {
+      this.imageSRC = 'assets/mangekyu.png';
+    } else {
+      this.imageSRC = 'assets/sharingan.png';
+    }
   }
 }
